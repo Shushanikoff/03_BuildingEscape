@@ -21,7 +21,12 @@ void UPositionReport::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
+	AActor *MyActor;
+	MyActor = GetOwner();
+	FVector position = MyActor->GetActorLocation();
+	FString object_name = GetOwner()->GetName();
 	
+	UE_LOG(LogTemp, Warning, TEXT("Hello, Bro!!! This is %s! I'm at: (%f, %f, %f)"), *object_name, position.X, position.Y, position.Z);
 }
 
 
